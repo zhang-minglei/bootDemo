@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: zml-boot-api
+  output:
+    ansi:
+      enabled: always
+  cloud:
+    config:
+      profile: dev
+      uri: http://127.0.0.1:8888/
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    serviceUrl:
+#      defaultZone: http://localhost:7777/
+#    fetch-registry: true
+server:
+  port: 9001
+
+endpoints:
+  refresh:
+    enabled: true
+  restart:
+    enable: true

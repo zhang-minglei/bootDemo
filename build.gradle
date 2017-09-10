@@ -1,0 +1,47 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.6.RELEASE'
+	}
+	repositories {
+		maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+		mavenCentral()
+		jcenter()
+//		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+subprojects{
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'org.springframework.boot'
+
+	version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = 1.8
+
+	repositories {
+		maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+		mavenCentral()
+		jcenter()
+//	mavenCentral()
+	}
+
+	ext {
+		springCloudVersion = 'Dalston.SR3'
+	}
+
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		}
+	}
+	dependencies {
+		compile("org.projectlombok:lombok:1.16.16")
+		compile("org.springframework.boot:spring-boot-starter-web:1.5.6.RELEASE")
+		testCompile('org.springframework.boot:spring-boot-starter-test')
+	}
+
+}
+

@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: zml-eureka
+  output:
+    ansi:
+      enabled: always
+
+server:
+  port: 7777
+
+eureka:
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:7777/eureka/
+  instance:
+      leaseRenewalIntervalInSeconds: 1
+      leaseExpirationDurationInSeconds: 2
+#      non-secure-port: 7777
+      prefer-ip-address: true
+      #ip-address: true
+#      statusPageUrlPath: http://127.0.0.1:${server.port}/info
+#      healthCheckUrlPath: http://127.0.0.1:${server.port}/health
+#      homePageUrl: http://127.0.0.1:${server.port}/

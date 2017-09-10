@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: zml-cloud-config
+  output:
+    ansi:
+      enabled: always
+server:
+  port: 9991
