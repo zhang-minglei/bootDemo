@@ -1,5 +1,7 @@
 package com.zml.api.demo.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.zml.api.demo.bean.Book;
 import com.zml.api.demo.common.ApiInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,10 +10,11 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.GET;
+import java.util.List;
 import java.util.Map;
 
 /**
- * @author Name:zhangminglei  Mail:minglei.zhang@boldseas.com
+ * @author Name:zhangminglei  Mail:love757967005@gmail.com
  * @version V1.0
  * @Description
  * @Date 2017-09-10 17:33
@@ -32,7 +35,9 @@ public class AccountController {
     }
 
     @GetMapping("/{id}/books")
-    public void getBooksById(@PathVariable("id") Long id) {
-        apiInterface.getBooks(id);
+    public List<Book> getBooksById(@PathVariable("id") Long id) {
+        List<Book> bookList = apiInterface.getBooks(id);
+        logger.info(JSON.toJSONString(bookList));
+        return bookList;
     }
 }

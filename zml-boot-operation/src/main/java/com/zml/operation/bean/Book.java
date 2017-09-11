@@ -1,4 +1,4 @@
-package com.zml.api.demo.bean;
+package com.zml.operation.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @author Name:zhangminglei  Mail:love757967005@gmail.com
  * @version V1.0
  * @Description
- * @Date 2017-09-10 17:42
+ * @Date 2017-09-12 00:02
  * @since JDK 1.8
  */
 @Data

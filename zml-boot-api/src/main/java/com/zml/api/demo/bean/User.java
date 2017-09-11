@@ -7,7 +7,7 @@ import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Name:zhangminglei  Mail:minglei.zhang@boldseas.com
+ * @author Name:zhangminglei  Mail:love757967005@gmail.com
  * @version V1.0
  * @Description
  * @Date 2017-09-10 17:40

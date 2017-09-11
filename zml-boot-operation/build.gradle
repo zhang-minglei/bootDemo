@@ -1,0 +1,10 @@
+project(':zml-boot-operation') {
+	dependencies {
+		compile('org.springframework.cloud:spring-cloud-starter-config')
+		compile('org.springframework.cloud:spring-cloud-starter-eureka')
+		testCompile('org.springframework.boot:spring-boot-starter-test')
+	}
+	bootRun {
+		systemProperties = System.properties
+	}
+}
